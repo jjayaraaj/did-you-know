@@ -1,0 +1,75 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div style="height: 100%; display: flex; align-items: center; justify-content: center;" *ngIf="loading">
+    <!-- Lines Small -->
+<ion-spinner name="lines-small"></ion-spinner>
+  </div>
+  <!-- <ion-text>Connection {{ networkStatus }}</ion-text> -->
+
+  <!-- <ion-button (click)="showAdd()">Test Add</ion-button> -->
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" pullMin="150" pullMax="200">
+    <ion-refresher-content  pullingIcon="arrow-down-outline" 
+    pullingText="Pull to refresh" 
+    refreshingSpinner="crescent"
+    refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+ 
+    <ion-card *ngFor="let dyk of dyks"  class="ion-no-border"> 
+      <div class="card-div">
+       
+      <ion-card-header class="">
+        <ion-card-title class="">{{dyk.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-img src="{{this.imageUrl}}{{dyk.image}}" style="height: 120px;"></ion-img>
+   
+      <h6 class=""><strong>{{dyk.subject}}</strong></h6>
+       <p class="">{{ dyk.description}} </p>
+   
+         <p class="source ion-no-padding ion-no-margin" >Source: {{ dyk.source }} </p>
+
+         <ion-row>
+           <ion-col> 
+             <ion-button fill="clear" (click)="onClickSave(dyk)" *ngIf="dyk.savedUserId != userId && dyk.id != dyKDetails?.savedID; else savedTemplate;">
+              <ion-icon name="bookmark-outline"></ion-icon>
+             </ion-button>
+             
+          <ng-template #savedTemplate>
+            <ion-button fill="clear" (click)="onClickUnsave(dyk)" >
+              <ion-icon name="bookmark"></ion-icon>
+            </ion-button>
+          </ng-template>
+
+        </ion-col>
+           <ion-col>
+            <ion-button fill="clear" (click)="shareWhatspp(dyk)">
+              <ion-icon color="success" ios="logo-whatsapp" md="logo-whatsapp"></ion-icon>
+             </ion-button>
+           </ion-col>
+         </ion-row>
+        
+         
+
+          
+         
+       </div>
+       
+    </ion-card>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+     <ion-infinite-scroll-content
+       loadingSpinner="bubbles"
+       loadingText="Loading more data...">
+     </ion-infinite-scroll-content>
+   </ion-infinite-scroll>
+    
+   </ion-list>
+
+
+</ion-content>
+
+

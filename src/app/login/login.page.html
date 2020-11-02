@@ -1,0 +1,86 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar >
+    <ion-title class="ion-text-center  ion-padding-top">
+      <img src="assets/logo.png" alt="">
+      </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding" fullscreen="true">
+
+ 
+  
+    <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="h-100">
+
+
+    
+
+    <ion-grid  class="h-100 ">
+      <ion-row  class="h-100 ion-align-items-center" >
+       
+        <ion-col size="12" sm-size="6"  >
+          <h5 class="ion-text-center  " ><ion-text color="bean-dark">SIGN IN</ion-text></h5>
+          <div style=" width:100%" class="ion-padding-top">
+            <ion-input 
+            
+            placeholder="Email" 
+            type="email" 
+            ngModel 
+            required 
+            email 
+            #emailCtrl = "ngModel"
+            name="email"></ion-input>
+          </div>
+          <ion-label class="ion-padding-start"  *ngIf="!emailCtrl.valid && emailCtrl.touched">Should be valid email Id </ion-label >
+            <div style="width:100%" class="ion-margin-top">
+              <ion-input 
+              type="password" 
+              ngModel 
+              required
+              minlength="6"
+              placeholder="Password"
+              #passwordCtrl="ngModel"
+              name="password"></ion-input>
+            
+            
+            </div>
+            <ion-label class="ion-padding-start" *ngIf="!passwordCtrl.valid && passwordCtrl.touched">Should be valid Password</ion-label >
+       
+          <ion-button class="ion-margin-top" color="bean-dark" type="submit" [disabled]="!loginForm.valid"   expand="full">Sign In</ion-button>
+          <p class="ion-text-center"><small>  <ion-text color="bean-dark" > <a [routerLink]="'/reset-password'"> Forgot Password ?</a></ion-text> </small></p>
+        </ion-col>
+      </ion-row>
+ 
+
+  
+  
+  
+
+  <!-- <p class="ion-text-center">or</p> -->
+
+ 
+    
+
+    <!-- <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="2">
+        <ion-img src="assets/google.png"> </ion-img>
+      </ion-col>
+      <ion-col><ion-button color="bean-dark" type="button"  expand="full">Continue with Gmail</ion-button></ion-col>
+    </ion-row> -->
+   
+  </ion-grid>
+</form>
+ 
+
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <p class="ion-text-center"><small>  Do you have an account? <ion-text color="bean-dark" > <a [routerLink]="'/register'"> Create new one </a></ion-text> </small></p>
+  </ion-toolbar>
+
+</ion-footer>

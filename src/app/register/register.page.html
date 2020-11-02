@@ -1,0 +1,72 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar >
+    <ion-title class="ion-text-center  ion-padding-top">
+      <img src="assets/logo.png" alt="">
+      </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="h-100">
+    <ion-grid class="h-100 ion-align-items-center">
+      <ion-row>
+        <ion-col>
+          <h5 class="ion-text-center" ><ion-text color="bean-dark">SIGN UP</ion-text></h5>
+        </ion-col>
+        <ion-col offset-md="3" size="12" size-md="6">
+          <ion-input placeholder="Email Id" formControlName="email"></ion-input>
+          <ion-text class="ion-padding-start"  color="danger" *ngIf="!registerForm.get('email').valid && registerForm.get('email').touched"><small> *Enter valid Email</small></ion-text>
+        </ion-col>
+        <ion-col offset-md="3" size="12" size-md="6">
+          <ion-input placeholder="Password" type="password" formControlName="password"></ion-input>
+          <ion-text class="ion-padding-start"  color="danger" *ngIf="!registerForm.get('password').valid && registerForm.get('password').touched"><small> *Enter valid password</small></ion-text>
+        </ion-col>
+        <ion-col offset-md="3" size="12" size-md="6">
+          <ion-input placeholder="Name" formControlName="name"></ion-input>
+          <ion-text class="ion-padding-start"  color="danger" *ngIf="!registerForm.get('name').valid && registerForm.get('name').touched"><small> *Enter name</small></ion-text>
+        </ion-col>
+        <ion-col offset-md="3" size="12" size-md="6">
+          <ion-input placeholder="Country" formControlName="country"></ion-input>
+          <ion-text class="ion-padding-start"  color="danger" *ngIf="!registerForm.get('country').valid && registerForm.get('country').touched"><small> *Enter Country</small></ion-text>
+        </ion-col>
+        <ion-col offset-md="3" size="12" size-md="6">
+          <ion-row class="ion-align-items-center">
+            <ion-col size="3">D.O.B</ion-col>
+            <ion-col><ion-datetime formControlName="dob"  displayFormat="MMM DD YYYY"   ></ion-datetime></ion-col>
+            <ion-text class="ion-padding-start"  color="danger" *ngIf="!registerForm.get('dob').valid && registerForm.get('dob').touched"><small> *Enter D.O.B</small></ion-text>
+          </ion-row>
+        </ion-col>
+        <ion-col size="12" offset-md="3" size="12" size-md="6" >
+          <ion-row>
+            <ion-col size="2"><ion-checkbox color="bean-dark" checked="false" (ionChange)="agreedChange()" ></ion-checkbox> </ion-col>
+            <ion-col><small>By signing up you agree to the term of service and privacy policy.</small></ion-col>
+          </ion-row>
+        </ion-col>
+
+      </ion-row>
+        <ion-row>
+          <ion-col size="12" offset-md="3" size="12" size-md="6" >
+            <ion-button color="bean-dark" type="submit" [disabled]="!agreed"  expand="full">Sign up</ion-button>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="12" offset-md="3" size="12" size-md="6">
+          </ion-col>
+
+        </ion-row>
+      
+    </ion-grid>
+  </form>
+ 
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <p class="ion-text-center"><small> Already have an account? <ion-text color="bean-dark" > <a [routerLink]="'/login'">Sign In</a> </ion-text> </small></p>
+
+  </ion-toolbar>
+
+</ion-footer>

@@ -1,0 +1,144 @@
+<ion-app>
+  <ion-menu side="start" contentId="main" menuId="first">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Little Bean
+        </ion-title>
+      </ion-toolbar>
+      <ion-content [fullscreen]="true">
+        <ion-list>
+          <!-- <ion-menu-toggle>
+            <ion-item lines="none" [routerLink]="'/title'">
+              <ion-icon name="home-outline" slot="start" ></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+          </ion-menu-toggle> -->
+          <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/dyk'">
+           
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Did You Know</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/saved'">           
+            <ion-icon name="albums-outline" slot="start"></ion-icon>
+            <ion-label>Favorite</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/my-account'">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>My Account</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Terms of Use</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Privacy Policy</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>Support Center</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'" (click)="logout();" >
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        </ion-list>
+      </ion-content>
+
+    </ion-header>
+  </ion-menu>
+
+  <ion-menu side="start" contentId="main" menuId="filter">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Little Bean Club
+        </ion-title>
+      </ion-toolbar>
+      <ion-content [fullscreen]="true">
+        <ion-list>
+          <!-- <ion-menu-toggle>
+            <ion-item lines="none" [routerLink]="'/title'">
+              <ion-icon name="home-outline" slot="start" ></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+          </ion-menu-toggle> -->
+          <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/dyk'">
+           
+            <ion-icon name="home-outline" slot="start"></ion-icon>
+            <ion-label>Did You Know</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/saved'">           
+            <ion-icon name="albums-outline" slot="start"></ion-icon>
+            <ion-label>Favorite</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/my-account'">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>My Account</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Terms of Use</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="document-text-outline" slot="start"></ion-icon>
+            <ion-label>Privacy Policy</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'">
+            <ion-icon name="call-outline" slot="start"></ion-icon>
+            <ion-label>Support Center</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item lines="none" [routerLink]="'/title'" (click)="logout();" >
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        
+        </ion-list>
+      </ion-content>
+
+    </ion-header>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

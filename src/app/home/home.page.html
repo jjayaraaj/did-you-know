@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="card-div">
+ 
+ <ion-card *ngFor="let p of people" [style.position]="'absolute'" class="ion-no-border"> 
+    
+   <ion-card-header class="ion-no-padding ion-no-margin">
+     <ion-card-title class="ion-no-padding ion-no-margin">Did You Know?</ion-card-title>
+   </ion-card-header>
+   <ion-img src="assets/{{p.image}}"></ion-img>
+
+   <h6 class="ion-no-padding ion-no-margin"><strong>{{p.name}}</strong></h6>
+    <p class="ion-no-padding ion-no-margin">{{ p.description }}</p>
+
+      <p class="source ion-no-padding ion-no-margin" >Source: {{ p.source }} <br><br> <img src="assets/swipe.png" alt=""></p>
+
+
+ </ion-card>
+ <ion-button *ngIf="reload" (click)="addCar()">Reload</ion-button>
+</div>
+
+
+</ion-content>
+
+

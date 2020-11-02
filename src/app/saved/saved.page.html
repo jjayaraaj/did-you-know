@@ -1,0 +1,44 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+<div *ngIf="!noFavrite; else noFav; ">
+  <ion-list >
+ 
+    <ion-card *ngFor="let dyk of dyks"  class="ion-no-border" >
+      <div class="card-div">
+       
+      <ion-card-header class="">
+        <ion-card-title class="">{{dyk.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-img src="{{this.imageUrl}}{{dyk.image}}" style="height: 120px;"></ion-img>
+   
+      <h6 class=""><strong>{{dyk.subject}}</strong></h6>
+       <p class="">{{ dyk.description}}</p>
+   
+         <p class="source ion-no-padding ion-no-margin" >Source: {{ dyk.source }} </p>
+        
+          <ion-button fill="clear" (click)="unsaveDyk(dyk)" >
+            <ion-icon color="danger" name="close"></ion-icon>
+          </ion-button>
+          
+         
+       </div>
+       
+    </ion-card>
+
+  
+   
+    
+   </ion-list>
+  </div>
+   <ng-template #noFav >
+     <ion-grid class="h-100 ion-text-center ion-padding-top">
+       <ion-row class="h-100 ion-align-items-center ion-padding-top">
+         <ion-col class="ion-padding-top">
+          <p class="ion-padding-top">No Favorites</p>
+          <ion-icon name="sad-outline" color="dark" style="font-size: 3em;"></ion-icon>
+         </ion-col>
+       </ion-row>
+     </ion-grid>
+   
+  </ng-template>
+</ion-content>

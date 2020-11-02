@@ -1,0 +1,67 @@
+<ion-header  class="ion-no-border">
+    <ion-toolbar >
+      <ion-title class="ion-text-center  ion-padding-top">
+        <img src="assets/logo.png" alt="">
+        </ion-title>
+        <ion-buttons slot="end">
+           <ion-button (click)="onModalClose()" >
+            <ion-icon  color="bean-dark"  name="close"></ion-icon>
+           </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen="true" class="ion-padding">
+    <form  #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="h-100">
+
+
+    
+
+        <ion-grid  class="h-100 ">
+          <ion-row  class="h-100 ion-align-items-center" >
+           
+            <ion-col size="12" sm-size="6"  >
+              <h5 class="ion-text-center  " ><ion-text color="bean-dark">Enter OTP</ion-text></h5>
+              <p class="ion-text-center  ">Check your email for the OTP</p>
+              <div style=" width:100%" class="ion-padding-top">
+                <ion-input 
+                
+                placeholder="One Time Password" 
+                type="number" 
+                ngModel 
+                required 
+                number 
+                #otpCtrl = "ngModel"
+                name="otp"></ion-input>
+    
+               
+              </div>
+             
+              <ion-button class="ion-margin-top" color="bean-dark" type="submit" [disabled]="!loginForm.valid"   expand="full">SEND</ion-button>
+              <ion-text class="">
+                <small> provide the email address that you have used when you signed up for your little bean account.</small>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+     
+    
+      
+      
+      
+    
+      <!-- <p class="ion-text-center">or</p> -->
+    
+     
+        
+    
+        <!-- <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-col size="2">
+            <ion-img src="assets/google.png"> </ion-img>
+          </ion-col>
+          <ion-col><ion-button color="bean-dark" type="button"  expand="full">Continue with Gmail</ion-button></ion-col>
+        </ion-row> -->
+       
+      </ion-grid>
+    </form>
+     
+  </ion-content>

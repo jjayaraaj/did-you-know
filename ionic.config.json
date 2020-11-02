@@ -1,0 +1,7 @@
+{
+  "name": "did-you-know",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

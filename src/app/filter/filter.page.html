@@ -1,0 +1,19 @@
+<ion-header  class="ion-no-border">
+  <ion-toolbar >
+    <ion-buttons slot="start" >
+      <ion-back-button [defaultHref]="'/dyk'"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center  ion-padding-top">
+      <img src="assets/logo.png" alt="">
+      </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding " fullscreen="true">
+  <ion-chip (click)="onClickAll()">All</ion-chip>
+  <ion-chip *ngFor="let tag of tags">
+    <ion-label (click)="onClickTag(tag)">{{ tag.tag }}</ion-label>
+  </ion-chip>
+  
+</ion-content>
